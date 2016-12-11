@@ -53,7 +53,7 @@ dredge(m)
 
 #see if your model is normally distributed
 qqnorm(resid(m))
-
+summary(aov(m))
 
 
 #final model with the variables that are in the best model of model selection
