@@ -1,0 +1,13 @@
+---
+title: "Test report"
+output: 
+  word_document:
+    reference_docx: word-styles.docx
+---
+
+#Header 1
+
+##Header 2
+edible dormice are awesome and I love their hormones, let´s have a look at all of that in detail!
+
+
