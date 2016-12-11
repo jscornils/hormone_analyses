@@ -54,7 +54,7 @@ dredge(m)
 #see if your model is normally distributed
 qqnorm(resid(m))
 summary(aov(m))
-
+plot(aov(m))
 
 #final model with the variables that are in the best model of model selection
 m<-lme(transx37e~mast_three+gest44+weight+age+strix_aluco, random= ~1| transponder, data=dat2, method="ML")
