@@ -4,6 +4,7 @@ library(car)
 library(multcomp)
 library(MuMIn)
 library(plotrix)
+library(nortest)
 setwd("C:/Users/cornilsj/Dropbox/jessi_und_franz/r/Kot/field")
 setwd("C:/Users/Jessica/Dropbox/jessi_und_franz/r/Kot/field")
 #dat<-read.csv("results_hormon_analyses_new.csv", header=T)
@@ -36,6 +37,8 @@ m<-lme(X37e~month2+weight+age+reproduction_season+ gest44+ time+mast_three+mega_
 
 #get transformation from script 
 source("C:/Users/cornilsj/Google Drive/Statistik/R/Functions and Commands/Boxcox AllClasses.r")
+source("C:/Users/Jessica/Google Drive/Statistik/R/Functions and Commands/Boxcox AllClasses.r")
+
 #transform model
 dat2$transx37e <- boxcox.ac(m, dat2)
 #create backtransformed ylab
@@ -50,8 +53,8 @@ dredge(m)
 
 #see if your model is normally distributed
 qqnorm(resid(m))
-
-
+summary(aov(m))
+plot(aov(m))
 
 #final model with the variables that are in the best model of model selection
 m<-lme(transx37e~mast_three+gest44+weight+age+strix_aluco, random= ~1| transponder, data=dat2, method="ML")
