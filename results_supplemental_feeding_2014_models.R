@@ -64,7 +64,7 @@ pplot(m)
 summary(glht(m, linfct=mcp(mast_three="Tukey")))
 summary(glht(m, linfct=mcp(strix_aluco="Tukey")))
 summary(glht(m, linfct=mcp(reproduction_season="Tukey")))
-
+summary(glht(m, linfct=mcp(age="Tukey")))
 
 ####reproduction at that time#####
 #m<-lme(X37e~month2+weight+age+reproduction+ gest44+ time+mast_three+strix_aluco, random= ~1| transponder, data=dat4, method="ML")
